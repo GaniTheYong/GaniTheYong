@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
     :root {
       --cream: #F7F3ED;
       --warm-white: #FDFAF6;
@@ -28,9 +28,9 @@
       --text-light: #7A9478;
       --border: #C8D8C4;
     }
- 
+
     html { scroll-behavior: smooth; }
- 
+
     body {
       background-color: var(--warm-white);
       color: var(--text-dark);
@@ -39,8 +39,7 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
- 
-    /* grain */
+
     body::before {
       content: '';
       position: fixed;
@@ -50,8 +49,8 @@
       z-index: 1000;
       opacity: 0.35;
     }
- 
-    /* ── NAV ── */
+
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -60,39 +59,20 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(253, 250, 246, 0.88);
+      background: rgba(253,250,246,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
- 
     .nav-left {
       display: flex;
       align-items: center;
       gap: 0.6rem;
       text-decoration: none;
     }
- 
-    .nav-back {
-      font-size: 0.7rem;
-      color: var(--text-light);
-      letter-spacing: 0.1em;
-    }
- 
-    .nav-sep { color: var(--border); font-size: 0.8rem; }
- 
-    .nav-current {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      color: var(--green-deep);
-      letter-spacing: 0.05em;
-    }
- 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
- 
+    .nav-back { font-size: 0.7rem; color: var(--text-light); letter-spacing: 0.1em; }
+    .nav-sep { color: var(--border); }
+    .nav-current { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--green-deep); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
       font-size: 0.72rem;
       letter-spacing: 0.12em;
@@ -101,17 +81,15 @@
       text-decoration: none;
       transition: color 0.3s;
     }
- 
     .nav-links a:hover { color: var(--green-mid); }
- 
-    /* ── HERO ── */
+
+    /* HERO */
     .hero {
       min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
       padding-top: 70px;
     }
- 
     .hero-left {
       background: var(--green-deep);
       display: flex;
@@ -121,8 +99,6 @@
       position: relative;
       overflow: hidden;
     }
- 
-    /* animated botanical bg */
     .hero-left::before {
       content: '';
       position: absolute;
@@ -131,7 +107,6 @@
         radial-gradient(ellipse 80% 60% at 10% 80%, rgba(74,122,68,0.25) 0%, transparent 60%),
         radial-gradient(ellipse 60% 80% at 90% 20%, rgba(45,74,42,0.3) 0%, transparent 50%);
     }
- 
     .hero-eyebrow {
       font-size: 0.65rem;
       letter-spacing: 0.25em;
@@ -145,7 +120,6 @@
       opacity: 0;
       animation: fadeUp 0.7s ease forwards 0.3s;
     }
- 
     .hero-eyebrow::before {
       content: '';
       display: block;
@@ -153,7 +127,6 @@
       height: 1px;
       background: var(--green-sage);
     }
- 
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(4rem, 7vw, 7rem);
@@ -165,14 +138,12 @@
       opacity: 0;
       animation: fadeUp 0.7s ease forwards 0.5s;
     }
- 
     .hero-title span {
       display: block;
       font-style: italic;
       color: var(--yellow);
       font-size: 0.65em;
     }
- 
     .hero-desc {
       font-size: 0.9rem;
       color: rgba(232,240,230,0.75);
@@ -183,7 +154,6 @@
       opacity: 0;
       animation: fadeUp 0.7s ease forwards 0.7s;
     }
- 
     .hero-badges {
       display: flex;
       gap: 0.8rem;
@@ -192,7 +162,6 @@
       opacity: 0;
       animation: fadeUp 0.7s ease forwards 0.9s;
     }
- 
     .badge {
       padding: 0.45rem 1rem;
       border: 1px solid rgba(184,201,180,0.3);
@@ -203,7 +172,6 @@
       color: var(--green-light);
       border-radius: 2px;
     }
- 
     .hero-right {
       background: var(--green-pale);
       position: relative;
@@ -212,45 +180,24 @@
       align-items: center;
       justify-content: center;
     }
- 
-    /* big decorative number */
-    .hero-right::before {
-      content: '🌱';
-      font-size: 18rem;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0.12;
-      line-height: 1;
-    }
- 
     .hero-stat-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5px;
       width: 100%;
       height: 100%;
-      position: relative;
     }
- 
     .hero-stat {
-      background: var(--warm-white);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding: 2.5rem;
       border: 1px solid var(--border);
-      transition: background 0.3s;
     }
- 
-    .hero-stat:hover { background: var(--cream); }
- 
     .hero-stat:nth-child(1) { background: var(--green-deep); border-color: var(--green-deep); }
     .hero-stat:nth-child(2) { background: var(--yellow-light); }
     .hero-stat:nth-child(3) { background: var(--green-pale); }
     .hero-stat:nth-child(4) { background: var(--terracotta-light); }
- 
     .stat-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 3.5rem;
@@ -258,26 +205,18 @@
       line-height: 1;
       margin-bottom: 0.3rem;
     }
- 
     .hero-stat:nth-child(1) .stat-num { color: var(--yellow); }
     .hero-stat:nth-child(2) .stat-num { color: var(--green-deep); }
     .hero-stat:nth-child(3) .stat-num { color: var(--green-mid); }
     .hero-stat:nth-child(4) .stat-num { color: var(--terracotta); }
- 
-    .stat-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
- 
+    .stat-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
     .hero-stat:nth-child(1) .stat-label { color: var(--green-light); }
     .hero-stat:nth-child(2) .stat-label,
     .hero-stat:nth-child(3) .stat-label,
     .hero-stat:nth-child(4) .stat-label { color: var(--text-mid); }
- 
-    /* ── SECTION BASE ── */
+
+    /* SECTION BASE */
     section { padding: 6rem 5rem; }
- 
     .section-label {
       font-size: 0.65rem;
       letter-spacing: 0.25em;
@@ -288,15 +227,9 @@
       align-items: center;
       gap: 1rem;
     }
- 
-    .section-label::before {
-      content: '';
-      width: 28px;
-      height: 1px;
-      background: var(--green-mid);
-    }
- 
-    /* ── APA ITU ── */
+    .section-label::before { content: ''; width: 28px; height: 1px; background: var(--green-mid); }
+
+    /* APA ITU */
     .what {
       background: var(--warm-white);
       display: grid;
@@ -304,12 +237,7 @@
       gap: 6rem;
       align-items: start;
     }
- 
-    .what-sticky {
-      position: sticky;
-      top: 100px;
-    }
- 
+    .what-sticky { position: sticky; top: 100px; }
     .what h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.2rem, 4vw, 3.5rem);
@@ -318,22 +246,9 @@
       color: var(--text-dark);
       margin-bottom: 1.5rem;
     }
- 
     .what h2 em { font-style: italic; color: var(--green-mid); }
- 
-    .what p {
-      color: var(--text-mid);
-      font-size: 0.9rem;
-      line-height: 1.9;
-      margin-bottom: 1rem;
-    }
- 
-    .what-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5px;
-    }
- 
+    .what p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.9; margin-bottom: 1rem; }
+    .what-cards { display: flex; flex-direction: column; gap: 1.5px; }
     .what-card {
       background: var(--cream);
       padding: 2rem 2.5rem;
@@ -344,18 +259,8 @@
       align-items: start;
       transition: transform 0.3s, border-color 0.3s;
     }
- 
-    .what-card:hover {
-      transform: translateX(6px);
-      border-color: var(--green-sage);
-    }
- 
-    .what-card-icon {
-      font-size: 1.8rem;
-      line-height: 1;
-      padding-top: 0.2rem;
-    }
- 
+    .what-card:hover { transform: translateX(6px); border-color: var(--green-sage); }
+    .what-card-icon { font-size: 1.8rem; line-height: 1; padding-top: 0.2rem; }
     .what-card h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.2rem;
@@ -363,26 +268,12 @@
       color: var(--green-deep);
       margin-bottom: 0.4rem;
     }
- 
-    .what-card p {
-      font-size: 0.82rem;
-      color: var(--text-light);
-      line-height: 1.7;
-      margin: 0;
-    }
- 
-    /* ── MANFAAT ── */
-    .manfaat {
-      background: var(--green-deep);
-      color: var(--cream);
-    }
- 
-    .manfaat .section-label {
-      color: var(--green-light);
-    }
- 
+    .what-card p { font-size: 0.82rem; color: var(--text-light); line-height: 1.7; margin: 0; }
+
+    /* MANFAAT */
+    .manfaat { background: var(--green-deep); color: var(--cream); }
+    .manfaat .section-label { color: var(--green-light); }
     .manfaat .section-label::before { background: var(--green-light); }
- 
     .manfaat h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 3.5vw, 3rem);
@@ -390,15 +281,8 @@
       color: var(--cream);
       margin-bottom: 3.5rem;
     }
- 
     .manfaat h2 em { font-style: italic; color: var(--yellow); }
- 
-    .manfaat-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-    }
- 
+    .manfaat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; }
     .manfaat-item {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(184,201,180,0.12);
@@ -407,20 +291,16 @@
       position: relative;
       overflow: hidden;
     }
- 
     .manfaat-item::before {
       content: '';
       position: absolute;
       bottom: 0; left: 0;
-      height: 2px;
-      width: 0;
+      height: 2px; width: 0;
       background: var(--yellow);
       transition: width 0.4s ease;
     }
- 
     .manfaat-item:hover { background: rgba(255,255,255,0.07); }
     .manfaat-item:hover::before { width: 100%; }
- 
     .manfaat-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 3rem;
@@ -429,9 +309,7 @@
       line-height: 1;
       margin-bottom: 1rem;
     }
- 
     .manfaat-icon { font-size: 1.5rem; margin-bottom: 1rem; display: block; }
- 
     .manfaat-item h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.2rem;
@@ -439,18 +317,10 @@
       color: var(--yellow-light);
       margin-bottom: 0.6rem;
     }
- 
-    .manfaat-item p {
-      font-size: 0.8rem;
-      color: rgba(232,240,230,0.6);
-      line-height: 1.8;
-    }
- 
-    /* ── VIDEOS ── */
-    .videos {
-      background: var(--cream);
-    }
- 
+    .manfaat-item p { font-size: 0.8rem; color: rgba(232,240,230,0.6); line-height: 1.8; }
+
+    /* VIDEOS */
+    .videos { background: var(--cream); }
     .videos h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 3.5vw, 3rem);
@@ -458,21 +328,9 @@
       color: var(--text-dark);
       margin-bottom: 0.5rem;
     }
- 
     .videos h2 em { font-style: italic; color: var(--green-mid); }
- 
-    .videos-sub {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      margin-bottom: 3rem;
-    }
- 
-    .videos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
- 
+    .videos-sub { font-size: 0.85rem; color: var(--text-light); margin-bottom: 3rem; }
+    .videos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .video-card {
       background: var(--warm-white);
       border: 1px solid var(--border);
@@ -482,28 +340,24 @@
       display: block;
       transition: transform 0.4s, box-shadow 0.4s;
     }
- 
     .video-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 16px 40px rgba(30,46,28,0.1);
     }
- 
     .video-thumb {
       aspect-ratio: 16/9;
       position: relative;
       overflow: hidden;
       background: var(--green-pale);
     }
- 
     .video-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.6s;
+      display: block;
     }
- 
     .video-card:hover .video-thumb img { transform: scale(1.06); }
- 
     .video-play-overlay {
       position: absolute;
       inset: 0;
@@ -513,12 +367,9 @@
       background: rgba(30,46,28,0);
       transition: background 0.3s;
     }
- 
     .video-card:hover .video-play-overlay { background: rgba(30,46,28,0.3); }
- 
     .play-btn {
-      width: 44px;
-      height: 44px;
+      width: 44px; height: 44px;
       border-radius: 50%;
       background: rgba(247,243,237,0.92);
       display: flex;
@@ -528,12 +379,9 @@
       transform: scale(0.7);
       transition: all 0.3s;
     }
- 
     .video-card:hover .play-btn { opacity: 1; transform: scale(1); }
     .play-btn svg { width: 15px; height: 15px; fill: var(--green-deep); margin-left: 2px; }
- 
     .video-info { padding: 1.4rem 1.5rem; }
- 
     .video-tag {
       font-size: 0.62rem;
       letter-spacing: 0.15em;
@@ -541,7 +389,6 @@
       color: var(--green-mid);
       margin-bottom: 0.4rem;
     }
- 
     .video-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1rem;
@@ -549,8 +396,8 @@
       color: var(--text-dark);
       line-height: 1.35;
     }
- 
-    /* ── TOKO ── */
+
+    /* TOKO */
     .toko {
       background: var(--yellow-light);
       display: grid;
@@ -558,10 +405,8 @@
       gap: 5rem;
       align-items: center;
     }
- 
     .toko .section-label { color: var(--green-deep); }
     .toko .section-label::before { background: var(--green-deep); }
- 
     .toko h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 3.5vw, 3rem);
@@ -569,22 +414,9 @@
       color: var(--green-deep);
       margin-bottom: 1rem;
     }
- 
     .toko h2 em { font-style: italic; color: var(--terracotta); }
- 
-    .toko p {
-      font-size: 0.88rem;
-      color: var(--text-mid);
-      line-height: 1.9;
-      margin-bottom: 2rem;
-    }
- 
-    .toko-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
- 
+    .toko p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.9; margin-bottom: 2rem; }
+    .toko-links { display: flex; flex-direction: column; gap: 0.8rem; }
     .toko-link {
       display: flex;
       align-items: center;
@@ -595,30 +427,12 @@
       text-decoration: none;
       color: var(--text-dark);
       font-size: 0.82rem;
-      letter-spacing: 0.05em;
       transition: all 0.3s;
     }
- 
-    .toko-link:hover {
-      background: var(--green-deep);
-      color: var(--cream);
-      border-color: var(--green-deep);
-    }
- 
-    .toko-link-name {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-weight: 400;
-    }
- 
+    .toko-link:hover { background: var(--green-deep); color: var(--cream); border-color: var(--green-deep); }
+    .toko-link-name { display: flex; align-items: center; gap: 0.8rem; font-weight: 400; }
     .toko-link-arrow { font-size: 1rem; transition: transform 0.3s; }
     .toko-link:hover .toko-link-arrow { transform: translateX(4px); }
- 
-    .toko-visual {
-      position: relative;
-    }
- 
     .toko-card {
       background: var(--green-deep);
       padding: 3rem;
@@ -626,17 +440,14 @@
       position: relative;
       overflow: hidden;
     }
- 
     .toko-card::after {
       content: '🌿';
       font-size: 10rem;
       position: absolute;
-      bottom: -1.5rem;
-      right: -1rem;
+      bottom: -1.5rem; right: -1rem;
       opacity: 0.08;
       line-height: 1;
     }
- 
     .toko-card-label {
       font-size: 0.65rem;
       letter-spacing: 0.2em;
@@ -644,7 +455,6 @@
       color: var(--green-light);
       margin-bottom: 1.5rem;
     }
- 
     .toko-card-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2rem;
@@ -654,13 +464,7 @@
       color: var(--cream);
       margin-bottom: 1.5rem;
     }
- 
-    .toko-card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
- 
+    .toko-card-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .toko-tag {
       padding: 0.3rem 0.8rem;
       background: rgba(184,201,180,0.15);
@@ -669,13 +473,9 @@
       letter-spacing: 0.1em;
       color: var(--green-light);
     }
- 
-    /* ── KOMUNITAS ── */
-    .komunitas {
-      background: var(--warm-white);
-      text-align: center;
-    }
- 
+
+    /* KOMUNITAS */
+    .komunitas { background: var(--warm-white); text-align: center; }
     .komunitas h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 3.5vw, 3rem);
@@ -683,9 +483,7 @@
       color: var(--text-dark);
       margin-bottom: 1rem;
     }
- 
     .komunitas h2 em { font-style: italic; color: var(--green-mid); }
- 
     .komunitas-sub {
       font-size: 0.88rem;
       color: var(--text-light);
@@ -693,7 +491,6 @@
       margin: 0 auto 3.5rem;
       line-height: 1.8;
     }
- 
     .komunitas-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -701,7 +498,6 @@
       max-width: 900px;
       margin: 0 auto 3.5rem;
     }
- 
     .komunitas-item {
       background: var(--cream);
       border: 1px solid var(--border);
@@ -711,19 +507,10 @@
       transition: all 0.3s;
       display: block;
     }
- 
-    .komunitas-item:hover {
-      background: var(--green-deep);
-      border-color: var(--green-deep);
-    }
- 
+    .komunitas-item:hover { background: var(--green-deep); border-color: var(--green-deep); }
     .komunitas-item:hover .komunitas-item-title,
     .komunitas-item:hover .komunitas-item-sub { color: var(--cream); }
- 
-    .komunitas-item:hover .komunitas-icon { filter: brightness(10); }
- 
     .komunitas-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
- 
     .komunitas-item-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1rem;
@@ -732,13 +519,7 @@
       margin-bottom: 0.3rem;
       transition: color 0.3s;
     }
- 
-    .komunitas-item-sub {
-      font-size: 0.75rem;
-      color: var(--text-light);
-      transition: color 0.3s;
-    }
- 
+    .komunitas-item-sub { font-size: 0.75rem; color: var(--text-light); transition: color 0.3s; }
     .back-home {
       display: inline-flex;
       align-items: center;
@@ -752,14 +533,9 @@
       padding-bottom: 3px;
       transition: all 0.3s;
     }
- 
-    .back-home:hover {
-      color: var(--green-mid);
-      border-color: var(--green-mid);
-      gap: 1rem;
-    }
- 
-    /* ── FOOTER ── */
+    .back-home:hover { color: var(--green-mid); border-color: var(--green-mid); }
+
+    /* FOOTER */
     footer {
       background: var(--green-deep);
       color: var(--cream);
@@ -768,37 +544,30 @@
       justify-content: space-between;
       align-items: center;
     }
- 
     .footer-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.95rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
- 
-    .footer-copy {
-      font-size: 0.7rem;
-      color: rgba(232,240,230,0.4);
-    }
- 
-    /* ── ANIMATIONS ── */
+    .footer-copy { font-size: 0.7rem; color: rgba(232,240,230,0.4); }
+
+    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
     }
- 
     .reveal {
       opacity: 0;
       transform: translateY(28px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
- 
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.12s; }
     .reveal-delay-2 { transition-delay: 0.24s; }
     .reveal-delay-3 { transition-delay: 0.36s; }
- 
-    /* ── RESPONSIVE ── */
+
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -814,10 +583,10 @@
   </style>
 </head>
 <body>
- 
+
   <!-- NAV -->
   <nav>
-    <a href="/" class="nav-left" style="text-decoration:none;">
+    <a href="/" class="nav-left">
       <span class="nav-back">ganitheyong.com</span>
       <span class="nav-sep">/</span>
       <span class="nav-current">Microgreen</span>
@@ -830,7 +599,7 @@
       <li><a href="#komunitas">Komunitas</a></li>
     </ul>
   </nav>
- 
+
   <!-- HERO -->
   <section class="hero" style="padding:0;">
     <div class="hero-left">
@@ -840,7 +609,7 @@
         <span>Tanam. Panen. Nikmati.</span>
       </h1>
       <p class="hero-desc">
-        Sayuran bergizi tinggi yang bisa Anda tanam sendiri di dalam rumah — dipanen hanya dalam 8–14 hari, dengan modal yang sangat kecil.
+        Sayuran bergizi tinggi yang bisa Anda tanam sendiri di dalam rumah — dipanen hanya dalam 8 hingga 14 hari, dengan modal yang sangat kecil.
       </p>
       <div class="hero-badges">
         <span class="badge">🌿 Organik</span>
@@ -849,7 +618,6 @@
         <span class="badge">💚 Bergizi Tinggi</span>
       </div>
     </div>
- 
     <div class="hero-right">
       <div class="hero-stat-grid">
         <div class="hero-stat">
@@ -866,12 +634,12 @@
         </div>
         <div class="hero-stat">
           <div class="stat-num">0 m²</div>
-          <div class="stat-label">Lahan di luar tidak diperlukan</div>
+          <div class="stat-label">Lahan luar tidak diperlukan</div>
         </div>
       </div>
     </div>
   </section>
- 
+
   <!-- APA ITU MICROGREEN -->
   <section class="what" id="apa-itu">
     <div class="what-sticky">
@@ -881,7 +649,6 @@
       <p class="reveal reveal-delay-2">Meski ukurannya mungil, penelitian menunjukkan kandungan vitaminnya bisa 4 hingga 40 kali lebih tinggi dibanding sayuran yang sama dalam kondisi dewasa.</p>
       <p class="reveal reveal-delay-2">Inilah yang membuat microgreen menjadi pilihan cerdas bagi siapa saja yang ingin hidup lebih sehat tanpa harus repot dengan kebun besar.</p>
     </div>
- 
     <div class="what-cards">
       <div class="what-card reveal">
         <span class="what-card-icon">🌱</span>
@@ -913,16 +680,16 @@
       </div>
     </div>
   </section>
- 
+
   <!-- MANFAAT -->
   <section class="manfaat" id="manfaat">
-    <div class="section-label reveal">Manfaat & Nutrisi</div>
+    <div class="section-label reveal">Manfaat &amp; Nutrisi</div>
     <h2 class="reveal reveal-delay-1">Kecil ukurannya,<br><em>besar manfaatnya</em></h2>
     <div class="manfaat-grid">
       <div class="manfaat-item reveal">
         <div class="manfaat-num">01</div>
         <span class="manfaat-icon">💪</span>
-        <h3>Kaya Vitamin & Mineral</h3>
+        <h3>Kaya Vitamin &amp; Mineral</h3>
         <p>Vitamin C, E, K, dan Beta-karoten dalam konsentrasi tinggi. Satu genggam microgreen bisa memenuhi kebutuhan vitamin harian Anda.</p>
       </div>
       <div class="manfaat-item reveal reveal-delay-1">
@@ -946,7 +713,7 @@
       <div class="manfaat-item reveal reveal-delay-1">
         <div class="manfaat-num">05</div>
         <span class="manfaat-icon">👶</span>
-        <h3>Aman untuk Balita & Lansia</h3>
+        <h3>Aman untuk Balita &amp; Lansia</h3>
         <p>Teksturnya lembut dan mudah dicerna. Cocok untuk semua kelompok usia, dari balita hingga lansia yang butuh nutrisi ekstra.</p>
       </div>
       <div class="manfaat-item reveal reveal-delay-2">
@@ -957,34 +724,30 @@
       </div>
     </div>
   </section>
- 
+
   <!-- VIDEO -->
   <section class="videos" id="video">
     <div class="section-label reveal">Belajar dari Video</div>
     <h2 class="reveal reveal-delay-1">Tonton, pelajari,<br><em>langsung praktik</em></h2>
     <p class="videos-sub reveal reveal-delay-1">Video panduan lengkap dari channel YouTube Gani The Yong</p>
- 
     <div class="videos-grid">
+
       <a href="https://youtu.be/2NhwLylUQIs" target="_blank" class="video-card reveal">
         <div class="video-thumb">
-          <img src="https://img.youtube.com/vi/2NhwLylUQIs/maxresdefault.jpg"
-               onerror="this.src='https://img.youtube.com/vi/2NhwLylUQIs/hqdefault.jpg'"
-               alt="Video Microgreen" />
+          <img src="https://img.youtube.com/vi/2NhwLylUQIs/hqdefault.jpg" alt="Microgreen: Tanaman Pendek Bergizi Tinggi" />
           <div class="video-play-overlay">
             <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
         </div>
         <div class="video-info">
           <p class="video-tag">Microgreen · Pemula</p>
-          <p class="video-title">Microgreen: Tanaman Pendek, Bergizi Tinggi, Murah & Organik</p>
+          <p class="video-title">Microgreen: Tanaman Pendek, Bergizi Tinggi, Murah &amp; Organik</p>
         </div>
       </a>
- 
+
       <a href="https://youtu.be/7XKKtBExEmY" target="_blank" class="video-card reveal reveal-delay-1">
         <div class="video-thumb">
-          <img src="https://img.youtube.com/vi/7XKKtBExEmY/maxresdefault.jpg"
-               onerror="this.src='https://img.youtube.com/vi/7XKKtBExEmY/hqdefault.jpg'"
-               alt="Video Microgreen" />
+          <img src="https://img.youtube.com/vi/7XKKtBExEmY/hqdefault.jpg" alt="Cara Menanam Microgreen" />
           <div class="video-play-overlay">
             <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
@@ -994,31 +757,29 @@
           <p class="video-title">Cara Menanam Microgreen di Rumah</p>
         </div>
       </a>
- 
+
       <a href="https://youtu.be/G835WKGiCew" target="_blank" class="video-card reveal reveal-delay-2">
         <div class="video-thumb">
-          <img src="https://img.youtube.com/vi/G835WKGiCew/maxresdefault.jpg"
-               onerror="this.src='https://img.youtube.com/vi/G835WKGiCew/hqdefault.jpg'"
-               alt="Video Microgreen" />
+          <img src="https://img.youtube.com/vi/G835WKGiCew/hqdefault.jpg" alt="Panen Microgreen" />
           <div class="video-play-overlay">
             <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
         </div>
         <div class="video-info">
           <p class="video-tag">Microgreen · Berkebun</p>
-          <p class="video-title">Panen Microgreen & Cara Menikmatinya</p>
+          <p class="video-title">Panen Microgreen &amp; Cara Menikmatinya</p>
         </div>
       </a>
+
     </div>
- 
     <p style="text-align:center; margin-top:2.5rem;">
       <a href="https://youtube.com/@ganitheyong" target="_blank"
          style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--green-mid); text-decoration:none; border-bottom:1px solid var(--green-light); padding-bottom:2px;">
-        Lihat semua video →
+        Lihat semua video di YouTube &rarr;
       </a>
     </p>
   </section>
- 
+
   <!-- TOKO BENIH -->
   <section class="toko" id="toko">
     <div>
@@ -1042,7 +803,6 @@
         </a>
       </div>
     </div>
- 
     <div class="toko-visual reveal reveal-delay-1">
       <div class="toko-card">
         <p class="toko-card-label">Tersedia di toko kami</p>
@@ -1062,15 +822,14 @@
       </div>
     </div>
   </section>
- 
-  <!-- KOMUNITAS & KONTAK -->
+
+  <!-- KOMUNITAS -->
   <section class="komunitas" id="komunitas">
-    <div class="section-label reveal" style="justify-content:center;">Komunitas & Kontak</div>
+    <div class="section-label reveal" style="justify-content:center;">Komunitas &amp; Kontak</div>
     <h2 class="reveal reveal-delay-1">Bergabung dengan<br><em>komunitas kita</em></h2>
     <p class="komunitas-sub reveal reveal-delay-1">
       Ribuan penanam microgreen di seluruh Indonesia sudah bergabung. Mari saling berbagi pengalaman, tips, dan hasil panen!
     </p>
- 
     <div class="komunitas-grid reveal reveal-delay-2">
       <a href="https://youtube.com/@ganitheyong" target="_blank" class="komunitas-item">
         <span class="komunitas-icon">▶️</span>
@@ -1080,7 +839,7 @@
       <a href="https://www.facebook.com/groups/ganitheyong/" target="_blank" class="komunitas-item">
         <span class="komunitas-icon">👥</span>
         <p class="komunitas-item-title">Facebook Group</p>
-        <p class="komunitas-item-sub">Microgreen, Slow & Simple Life</p>
+        <p class="komunitas-item-sub">Microgreen, Slow &amp; Simple Life</p>
       </a>
       <a href="mailto:hello@ganitheyong.com" class="komunitas-item">
         <span class="komunitas-icon">✉️</span>
@@ -1088,17 +847,27 @@
         <p class="komunitas-item-sub">hello@ganitheyong.com</p>
       </a>
     </div>
- 
-    <a href="/" class="back-home reveal">← Kembali ke Gani The Yong</a>
+    <a href="/" class="back-home reveal">&larr; Kembali ke Gani The Yong</a>
   </section>
- 
+
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Gani The Yong · Microgreen</div>
-    <div class="footer-copy">© 2025 · ganitheyong.com/microgreen</div>
+    <div class="footer-logo">Gani The Yong &middot; Microgreen</div>
+    <div class="footer-copy">&copy; 2025 &middot; ganitheyong.com/microgreen</div>
   </footer>
- 
+
   <script>
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e 
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
